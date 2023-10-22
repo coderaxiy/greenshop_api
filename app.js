@@ -1,4 +1,4 @@
-const http = require('node:http')
+const http = require('http')
 const { getPlants, addPlant, removePlant, getPlant } = require('./controllers/PlantsController')
 const { addCategory, getCategories } = require('./controllers/CategoryController')
 const Router = require('./middlewares/RouteHandler')
