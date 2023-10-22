@@ -100,4 +100,8 @@ async function getPlant(req, res, id) {
     }
 }
 
-module.exports = { getPlants, addPlant, removePlant, getPlant }
+function checkServer (req, res) {
+    return res.end(JSON.stringify('Server running'))
+}
+
+module.exports = { getPlants, addPlant, removePlant, getPlant, checkServer }

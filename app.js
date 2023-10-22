@@ -1,5 +1,5 @@
 const http = require('http')
-const { getPlants, addPlant, removePlant, getPlant } = require('./controllers/PlantsController')
+const { getPlants, addPlant, removePlant, getPlant, checkServer } = require('./controllers/PlantsController')
 const { addCategory, getCategories } = require('./controllers/CategoryController')
 const Router = require('./middlewares/RouteHandler')
 
@@ -18,6 +18,7 @@ const server = http.createServer((req, res) => {
     router.request(req, res);
 })
 
+router.get('/', checkServer)
 // \\ GET // \\
 router.get('/v1/plants', getPlants)
 router.get('/v1/plant/:id', getPlant)
