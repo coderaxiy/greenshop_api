@@ -35,5 +35,5 @@ router.post('/v1/category', addCategory)
 // \\ POST // \\
 
 
-server.listen(3005)
+server.listen(80)
 
