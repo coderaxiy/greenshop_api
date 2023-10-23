@@ -6,4 +6,4 @@ CREATE TABLE IF NOT EXISTS users (
     phone VARCHAR(25),
     photo VARCHAR(255),
     password VARCHAR(255)
-)
+);
