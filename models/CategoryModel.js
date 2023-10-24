@@ -1,7 +1,7 @@
 const {pool} = require("../config/connectDB");
 
 function createCategory(data) {
-    const query = `INSERT INTO category ( category_name ) VALUE (?)`;
+    const query = `INSERT INTO category ( category_name ) values (?)`
 
     const newData = [
         data.category_name,
