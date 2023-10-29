@@ -1,8 +1,10 @@
+require('dotenv').config();
 const http = require('http')
+const cors = require('cors')
 const { getPlants, addPlant, removePlant, getPlant, checkServer } = require('./controllers/PlantsController')
 const { addCategory, getCategories } = require('./controllers/CategoryController')
 const Router = require('./middlewares/RouteHandler')
-
+cors({origin: '*'})
 const router = new Router()
 
 const server = http.createServer((req, res) => {
@@ -35,5 +37,7 @@ router.post('/v1/category', addCategory)
 // \\ POST // \\
 
 
-server.listen(3005)
+server.listen(process.env.NODE_DOCKER_PORT, () => {
+    console.log('Server is running')
+})
 
